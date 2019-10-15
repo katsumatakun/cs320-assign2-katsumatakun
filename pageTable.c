@@ -58,7 +58,6 @@ void displayPageTable(struct pageTable pt){
 int getSwapPage(struct pageTable* pt){
   int p;
 
-  srand(time(0));
   p = rand()%(pt->numPages);
   while (!pt->pages[p].valid){
     p = rand()%(pt->numPages);
@@ -88,7 +87,7 @@ void storePage(struct pageTable* pt, int pageNum){
   pt->pages[pageNum].valid = true;
 }
 
-int accessPage(struct pageTable* pt, int pageNum){
+void accessPage(struct pageTable* pt, int pageNum){
   
   if (pt->pages[pageNum].valid){
     printf("Page: %d found at frame %d\n\n", pageNum, pt->pages[pageNum].frameNum);
@@ -104,7 +103,7 @@ int main(int argc, char *argv[]) {
 
   struct pageTable pt;
   int p;
-  int faults;
+
 
   
   srand(time(0)); // seed the random number generator    

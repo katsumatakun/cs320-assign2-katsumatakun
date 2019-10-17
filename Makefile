@@ -1,12 +1,11 @@
 CC = gcc
 CFLAGS = -Wall
+@ = pageTable.c
+all: pageTable
 
-all: mmu
-
-%: %.c
+pageTable: pageTable.c
 	$(CC) $(CFLAGS) -o $@ $^
 
 
 clean:
-	rm -f mmu
-
+	rm -f pageTable

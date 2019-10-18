@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -Wall
+# CFLAGS = -Wall
 @ = pageTable.c
 all: pageTable
 

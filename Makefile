@@ -1,11 +1,13 @@
 CC = gcc
 # CFLAGS = -Wall
 @ = pageTable.c
-all: pageTable
+all: pageTable alloc_test
 
 pageTable: pageTable.c
-	$(CC) $(CFLAGS) -o $@ $^
+	$(CC) -o pageTable pageTable.c
 
+alloc_test: allocation_test.c
+	$(CC) -o alloc_test allocation_test.c
 
 clean:
-	rm -f pageTable
+	rm -f pageTable alloc_test
